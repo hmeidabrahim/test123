@@ -16,4 +16,17 @@ class AccountTest {
         // Then
         assertThat(account.getBalance()).isEqualTo(100);
     }
+
+    @Test
+    void should_withdraw_money_from_account() {
+        // Given
+        Account account = new Account();
+        account.deposit(100);
+
+        // When
+        account.withdraw(30);
+
+        // Then
+        assertThat(account.getBalance()).isEqualTo(70);
+    }
 }
